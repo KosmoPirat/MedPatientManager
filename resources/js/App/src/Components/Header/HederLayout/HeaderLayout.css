@@ -1,0 +1,11 @@
+.header-layout_shadow {
+    box-shadow: 0 0 0.5em 0 rgba(10,10,10,0.2);
+}
+
+.header-layout_dropdown-button {
+    background-color: #485fc7;
+}
+
+.header-layout_height {
+    min-height: 5rem;
+}

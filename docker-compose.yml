@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+
+    php-fpm:
+        build:
+            context: docker/php-fpm
+        volumes:
+            - ./:/var/MedPatientManager
+        environment:
+            PHP_IDE_CONFIG: "serverName=Docker"
+        depends_on:
+            - mpm-db
+        networks:
+            - internal
+
+    mpm-db:
+        image: postgres
+        restart: always
+        networks:
+            - internal
+        environment:
+            - POSTGRES_DB=${DB_DATABASE}
+            - POSTGRES_USER=${DB_USERNAME}
+            - POSTGRES_PASSWORD=${DB_PASSWORD}
+        volumes:
+            - ./docker/postgres/datadir:/var/lib/postgresql/data
+
+    nginx:
+        build:
+            context: docker/nginx
+        volumes:
+            - ./:/var/MedPatientManager/
+            - ./storage/app/public/:/var/MedPatientManager/public/storage/
+        ports:
+            - 80:80
+        depends_on:
+            - php-fpm
+        networks:
+            - internal
+
+networks:
+    internal:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 192.168.220.0/28

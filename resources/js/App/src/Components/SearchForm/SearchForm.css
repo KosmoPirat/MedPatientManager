@@ -1,0 +1,21 @@
+.search-form-link {
+    color: rgb(255, 56, 96);
+    text-decoration: underline;
+}
+
+.search-form-link:hover {
+    cursor: pointer;
+    color: rgba(255, 56, 96, 0.5);
+}
+
+.search-form-message_abs {
+    position: absolute;
+    max-width: 400px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    top: 40%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}

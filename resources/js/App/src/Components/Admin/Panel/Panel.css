@@ -1,0 +1,34 @@
+.panel-is-fixed {
+    position: fixed;
+    top: 14px;
+    left: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    z-index: 900;
+}
+
+.panel-button-is-fixed {
+    position: fixed;
+    bottom: 7%;
+    left: 2%;
+    z-index: 900;
+}
+
+.panel-hide-effect{
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    overflow:hidden;
+    transition: visibility 0.5s, opacity 0.5s;
+}
+.panel-is-visible {
+    /* here comes the compromise, set a max-height that would for your usual contents*/
+    display: block;
+    width: 100%;
+    max-height: 96%;
+    opacity: 1;
+    overflow-y: scroll;
+    transition: opacity 0.5s;
+}
+
+

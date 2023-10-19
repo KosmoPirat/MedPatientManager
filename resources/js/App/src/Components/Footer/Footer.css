@@ -1,0 +1,6 @@
+.footer_color {
+    background-color: #ffffff;
+}
+.footer_shadow{
+    box-shadow: 0 0 0.5em 0 rgba(10,10,10,0.2);
+}
